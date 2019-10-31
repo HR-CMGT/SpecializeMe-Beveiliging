@@ -242,4 +242,5 @@ env.bak/
 venv.bak/
 pip-selfcheck.json
 
+.idea
 # End of https://www.gitignore.io/api/venv,macos,python,pycharm

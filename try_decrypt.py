@@ -1,4 +1,7 @@
+""" Demo: cracking code using a dictionary """
+
 class Try():
+    """ Try to store the dictionary """
     def __init__(self):
         self.root = {}
         self.next = self.root
@@ -27,16 +30,17 @@ class Try():
                 next = node.next
         return node.isWord
 
-
 class TryNode():
+    """ Nodes of the try """
     def __init__(self, c):
         self.c = c
         self.isWord = False
         self.next = {}
 
-root_try = None
+root_try = None # root is global
 
 def decrypt(cipher_text, mapping):
+    """ Decrypt substitute cipher using a mapping """
     plain_text = list(cipher_text)
     for i in range(len(plain_text)):
         if cipher_text[i] in mapping:
@@ -46,7 +50,7 @@ def decrypt(cipher_text, mapping):
     return "".join(plain_text)
 
 def crack_code(cipher_text, mapping, cipher_position, try_node):
-
+    """ Recursive function to crack a substitution code, using a dictionary stored in a try"""
     # cipher end
     if cipher_position == len(cipher_text):
         print(decrypt(cipher_text, mapping))

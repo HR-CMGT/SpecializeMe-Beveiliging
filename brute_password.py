@@ -1,13 +1,14 @@
+""" Demo: brute force finding a hash """
 import hashlib
 
 def create_password(password, alphabet, size):
+    """ Recursive function to create permutations of a size, given an alphabet"""
     if len(password) == size:
         yield password
     else:
         for c in alphabet:
             for result in create_password(password + c, alphabet, size):
                 yield result
-
 
 if __name__ == '__main__':
 

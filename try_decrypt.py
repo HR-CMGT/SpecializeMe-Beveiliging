@@ -1,4 +1,6 @@
 """ Demo: cracking code using a dictionary """
+from substitution_cipher import decrypt
+
 
 class Try():
     """ Try to store the dictionary """
@@ -38,16 +40,6 @@ class TryNode():
         self.next = {}
 
 root_try = None # root is global
-
-def decrypt(cipher_text, mapping):
-    """ Decrypt substitute cipher using a mapping """
-    plain_text = list(cipher_text)
-    for i in range(len(plain_text)):
-        if cipher_text[i] in mapping:
-            plain_text[i] = mapping[cipher_text[i]]
-        else:
-            plain_text[i] = '-'
-    return "".join(plain_text)
 
 def crack_code(cipher_text, mapping, cipher_position, try_node):
     """ Recursive function to crack a substitution code, using a dictionary stored in a try"""

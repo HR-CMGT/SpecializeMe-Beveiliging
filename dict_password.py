@@ -21,18 +21,20 @@ if __name__ == '__main__':
 
     print(i, "words loaded into dictionary")
 
-    pw = "tafelpoot"
-    b = pw.encode('utf-8')
-    hash_object = hashlib.sha256(b)
+    roel = "222489560036639a9e1e1e1440358ca7"
+    emiel = "b8ec2eb5a93ecbf2b6fd6a46c1b5d100"
+    bob = "009b74c5c394276786a66b998c02185a"
+    bas = "b370c7fb08219b313b537e1c22d63ee7"
+    rob = "2904dc629248221216a71d848caf39b7"
 
-    # hash_to_find = "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08" # test
 
-    hash_to_find = hash_object.hexdigest()
+    hash_to_find = emiel
 
     for wordlength in dictionary: #range(3, 10):  # excl max
         for word in dictionary[wordlength]:
             b = word.encode('utf-8')
-            hash_object = hashlib.sha256(b)
+            hash_object = hashlib.md5(b)
+
             if hash_object.hexdigest() == hash_to_find:
                 print("FOUND")
                 print(word)

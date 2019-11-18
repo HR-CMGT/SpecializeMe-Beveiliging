@@ -87,14 +87,8 @@ if __name__ == '__main__':
             line = f.readline()
         f.close()
 
-    #print("test: ", root_try.checkSpelling("bewaar"))
-
-    #exit()
-
     print(i, "words loaded into try")
 
-    cipher_text = "DOPF HQLLVGKR DOPF CTKQFZVGGKROFU"
-
-    #cipher_text = "wrg rh vvm tvsvrnv yllwhxszk svg rh svvo yvozmtirqp wzg mrvnzmw pzm zxsgviszovm dzg srvi hgzzg wzziln tvyifrpvm dv vvm tvsvrnv xlwv"
+    cipher_text = "iqeatf wsopyz cggkwtigxrtf qqf lsoddtkoatf"
 
     crack_code(cipher_text.lower(), {}, 0, root_try)

@@ -53,12 +53,14 @@ def crack_code(cipher_text, mapping, cipher_position, try_node):
         if try_node.isWord:
             return crack_code(cipher_text, mapping, cipher_position + 1, root_try)
         else:
+            # dead end => backtrack
             return False
     # existing char
     if cipher_text[cipher_position] in mapping:
         if mapping[cipher_text[cipher_position]] in try_node.next:
             return crack_code(cipher_text, mapping, cipher_position + 1, try_node.next[mapping[cipher_text[cipher_position]]])
         else:
+            # char does not match mapping => backtrack
             return False
     # new char
     else:
@@ -69,7 +71,7 @@ def crack_code(cipher_text, mapping, cipher_position, try_node):
                 mapping_new[cipher_text[cipher_position]] = c
                 if crack_code(cipher_text, mapping_new, cipher_position + 1, try_node.next[c]):
                     return True
-
+        # tried everything => backtrack
         return False
 
 if __name__ == '__main__':

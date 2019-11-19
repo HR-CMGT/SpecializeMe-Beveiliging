@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     hash_to_find = emiel
 
-    for wordlength in dictionary: #range(3, 10):  # excl max
+    for wordlength in dictionary: # can be optimized if you know the length
         for word in dictionary[wordlength]:
             b = word.encode('utf-8')
             hash_object = hashlib.md5(b)

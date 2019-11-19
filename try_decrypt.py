@@ -91,6 +91,7 @@ if __name__ == '__main__':
 
     print(i, "words loaded into try")
 
-    cipher_text = "iqeatf wsopyz cggkwtigxrtf qqf lsoddtkoatf"
+    #cipher_text = "iqeatf wsopyz cggkwtigxrtf qqf lsoddtkoatf"
+    cipher_text = "DOPF HQLLVGKR DOPF CTKQFZVGGKROFU".lower()
 
     crack_code(cipher_text.lower(), {}, 0, root_try)

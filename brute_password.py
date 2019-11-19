@@ -20,12 +20,10 @@ if __name__ == '__main__':
 
     hash_to_find = bob
 
-    for p in create_password("", list("abcdefghijklmnopqrstuvwxyz"), 5):
+    # "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()"
+    for p in create_password("", list("abcdefghijklmnopqrstuvwxyz!"), 5):
         b = p.encode('utf-8')
         hash_object = hashlib.md5(b)
         if hash_object.hexdigest() == hash_to_find:
             print("FOUND")
             print(p)
-
-
-# "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()"

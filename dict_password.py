@@ -28,7 +28,7 @@ if __name__ == '__main__':
     rob = "2904dc629248221216a71d848caf39b7"
 
 
-    hash_to_find = emiel
+    hash_to_find = bas
 
     for wordlength in dictionary: # can be optimized if you know the length
         for word in dictionary[wordlength]:
